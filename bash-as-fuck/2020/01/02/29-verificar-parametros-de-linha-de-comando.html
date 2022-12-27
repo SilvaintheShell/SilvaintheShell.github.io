@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Silva in the shell" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Silva in the shell</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">Silva in the shell</a>
+	</div>
+	<p class="lead">Shell, linux e DevOps</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#bash-as-Fuck">
+				<span class="name">bash-as-Fuck</span>
+				<span class="badge">31</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			29 - Verificar parâmetros de linha de comando
+		</div>
+		<time class="post-date dt-published" datetime="2020-01-02T07:20:23-03:00" itemprop="datePublished">2020/01/02
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h1 id="verificar-parâmetros-de-linha-de-comando">Verificar parâmetros de linha de comando</h1>
+
+<p>Para verificar parâmetros de linha de comando com <strong>Bourne shell</strong>, há apenas uma maneira recomendável:
+utilizar <strong>loop</strong> + <strong>case</strong> + <strong>shift</strong>. Já com <strong>Bash</strong> há mais de uma, pelo fato de o <strong>Bash</strong> suportar expressões regulares.
+Testar parâmetros utilizando <strong>loop</strong> + <strong>case</strong> + <strong>shift</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="o">[</span> <span class="nv">$# </span><span class="nt">-gt</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">do
+    case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in
+ 
+        </span>version <span class="p">|</span> <span class="nt">-v</span><span class="p">)</span> 
+           <span class="nb">echo</span> <span class="s2">"Release v0.1.0 - from Wikipedia.org"</span>
+           <span class="p">;;</span>
+
+        <span class="k">*</span><span class="p">)</span> 
+            <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$0</span><span class="s2">: Este parâmetro '</span><span class="nv">$1</span><span class="s2">' não foi reconhecido, saindo..."</span><span class="p">;</span>
+            <span class="nb">exit </span>1
+            <span class="p">;;</span>
+    <span class="k">esac</span>
+    <span class="nb">shift
+</span><span class="k">done</span>       
+
+</code></pre></div></div>
+
+<p>O loop while acima irá iniciar se e somente se houver um parâmetro. O case irá analisar os parâmetros e o shift irá mudar de parâmetros se houver mais de um e terminar o loop caso não haja mais nenhum. Caso você tenha muitas opções para o seu script deixe help e version sempre como as primeiras e utilize break para terminar o loop.</p>
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>

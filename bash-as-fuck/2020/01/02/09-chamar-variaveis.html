@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Silva in the shell" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Silva in the shell</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">Silva in the shell</a>
+	</div>
+	<p class="lead">Shell, linux e DevOps</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#bash-as-Fuck">
+				<span class="name">bash-as-Fuck</span>
+				<span class="badge">31</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			09 - Chamar Variáveis
+		</div>
+		<time class="post-date dt-published" datetime="2020-01-02T07:20:23-03:00" itemprop="datePublished">2020/01/02
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h1 id="chamar-variáveis">Chamar variáveis</h1>
+
+<p>Para chamar variáveis utiliza-se o sinal de cifrão <code class="highlighter-rouge">$var</code>. O cifrão (<code class="highlighter-rouge">$</code>) também é bastante utilizado em script sh,
+para executar programas externos exemplo: <code class="highlighter-rouge">var=$(expr 2 + 2)</code> irá armazenar a saída do programa
+<code class="highlighter-rouge">expr</code>. E o cifrão mais chave <code class="highlighter-rouge">${var}</code> é comum ser utilizado das seguintes maneiras:</p>
+
+<p>Para acessar posições em um array <code class="highlighter-rouge">${var[1]}</code>. (Obs.: não funciona para sh, apenas para Bash)</p>
+
+<p>E também para substituir o valor de uma variável se a mesma não possuir um valor: <code class="highlighter-rouge">${var:-nome}</code> -
+<code class="highlighter-rouge">${var:=nome}</code> - <code class="highlighter-rouge">${var:-$(programa)}</code> dessas maneiras irão substituir pelo que for passado depois de <code class="highlighter-rouge">:-</code> ou <code class="highlighter-rouge">:=</code>,
+exemplo em código:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">read</span> <span class="nt">-p</span> <span class="s2">"Digite um nome: "</span>myname
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">myname</span>:<span class="p">=</span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="k">}</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>O código acima irá pedir para o usuário digitar um nome, caso digite irá utilizar <code class="highlighter-rouge">echo</code> para exibir o nome
+digitado na saída padrão, caso contrário irá substituir pela saída do comando <code class="highlighter-rouge">whoami</code>, ao invés de substituir
+pela saída de um comando, você pode substituir por outro valor exemplo: <code class="highlighter-rouge">${myname:=BourneShell}</code>.</p>
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>

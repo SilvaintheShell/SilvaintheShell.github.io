@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-27T10:58:23-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Silva in the shell</title><subtitle>Shell, linux e DevOps</subtitle><entry><title type="html">01 - História</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/01-historia.html" rel="alternate" type="text/html" title="01 - História" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/01-historia</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/01-historia.html"><![CDATA[<h1 id="história">História</h1>
+
+<p>A primeira linguagem de script em Shell, criada por Stephen R. Bourne, veio a ser implementada na versão 7 do Unix Shell e ficou conhecida como Bourne Shell (sh). Após a sua implementação, diversas outras linguagens de scripts baseadas no sh vieram, tais como Korn Shell, e DMERT Shell, sendo que, em 1989, foi lançada a linguagem que se tornou Shell de login padrão em diversas distribuições Linux, a GNU Bash ou simplesmente Bash.</p>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[História]]></summary></entry><entry><title type="html">02 - Funcionalidades e Capacidades</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/02-funcionalidades-e-capacidades.html" rel="alternate" type="text/html" title="02 - Funcionalidades e Capacidades" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/02-funcionalidades-e-capacidades</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/02-funcionalidades-e-capacidades.html"><![CDATA[<h1 id="funcionalidades-e-capacidades">Funcionalidades e Capacidades</h1>
+
+<ul>
+  <li>Selecionar Shell</li>
+  <li>Comentários</li>
+  <li>Variáveis
+    <ul>
+      <li>Variáveis Pré-definidas</li>
+      <li>Variáveis Globais</li>
+      <li>Array</li>
+      <li>Chamar variáveis</li>
+      <li>Remover Variáveis</li>
+    </ul>
+  </li>
+  <li>If</li>
+  <li>If-else</li>
+  <li>Else-if</li>
+  <li>Case</li>
+  <li>Expressões Regulares</li>
+  <li>Operadores
+    <ul>
+      <li>Operadores Aritméticos</li>
+      <li>Operadores Booleanos</li>
+      <li>Operadores para Teste de Arquivos</li>
+      <li>Operadores Relacionais</li>
+      <li>Operadores de String</li>
+    </ul>
+  </li>
+  <li>Loop
+    <ul>
+      <li>For</li>
+      <li>While</li>
+    </ul>
+  </li>
+  <li>Funções
+    <ul>
+      <li>Status de saída</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Funcionalidades e Capacidades]]></summary></entry><entry><title type="html">03 - Selecionar Shell</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/03-selecionar-shell.html" rel="alternate" type="text/html" title="03 - Selecionar Shell" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/03-selecionar-shell</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/03-selecionar-shell.html"><![CDATA[<h1 id="selecionar-shell">Selecionar Shell</h1>
+
+<p>Para selecionar qual Shell será utilizado, use a combinação de hashtag (<code class="highlighter-rouge">#</code>) mais exclamação (<code class="highlighter-rouge">!</code>) e caminho do
+executável na primeira linha do arquivo script. Isso é conhecido como Shebang.</p>
+
+<ul>
+  <li>
+    <p>Para declarar que o script deve ser interpretado por Bourne Shell (sh) a primeira linha será escrita da seguinte maneira:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Para declarar que o script deve ser interpretado por Bourne-Again shell (Bash) é recomendável a utilização do comando env, pelo fato que apesar de o Bash já vir instalado em muitas distribuições Linux, não sabemos se ele estará em todas elas no mesmo diretório /bin/, então use a seguinte maneira:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+</code></pre></div>    </div>
+  </li>
+</ul>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Selecionar Shell]]></summary></entry><entry><title type="html">04 - Comentários</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/04-comentarios.html" rel="alternate" type="text/html" title="04 - Comentários" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/04-comentarios</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/04-comentarios.html"><![CDATA[<h1 id="comentários">Comentários</h1>
+
+<p>Os comentários nas linguagens Bourne Shell (sh) e Bourne-Again Shell (bash) serão utilizados hashtag (<code class="highlighter-rouge">#</code>),</p>
+
+<p>Exemplo de comentários:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Comentário</span>
+<span class="c">#- Segundo comentário</span>
+<span class="c"># // [ Terceiro comentário ] //</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Comentários]]></summary></entry><entry><title type="html">05 - Variáveis</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/05-variaveis.html" rel="alternate" type="text/html" title="05 - Variáveis" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/05-variaveis</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/05-variaveis.html"><![CDATA[<h1 id="variáveis">Variáveis</h1>
+
+<p>Como qualquer outra linguagem de programação conhecida, um script em Shell também possui suporte a variáveis. Em uma breve explicação uma variável é um nome/objeto simbólico ao qual podemos atribuir valores, ler ou manipular o conteúdo. Para mais informações, leia-me. Os scripts em Shell podem lidar com diferentes tipos de variáveis sem precisar definir o tipo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">MENSAGEM_DATA</span><span class="o">=</span>1979
+<span class="nv">MENSAGEM_NOME</span><span class="o">=</span><span class="s2">"Bourne Shell"</span>
+<span class="nv">mensagem_tipo1</span><span class="o">=</span><span class="s2">"Unix Shell"</span>
+<span class="nv">mensagem_autor</span><span class="o">=</span><span class="s2">"Stephen Bourne"</span>
+<span class="nv">MENSAGEM</span><span class="o">=</span>ola
+<span class="nv">_MENSAGEM2</span><span class="o">=</span>oi-2.020
+</code></pre></div></div>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Variáveis]]></summary></entry><entry><title type="html">06 - variáveis pre definidas</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/06-variaveis-pre-definidas.html" rel="alternate" type="text/html" title="06 - variáveis pre definidas" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/06-variaveis-pre-definidas</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/06-variaveis-pre-definidas.html"><![CDATA[<h1 id="variáveis-pré-definidas">Variáveis Pré-definidas</h1>
+
+<p>Os scripts em Shell possuem as seguintes variáveis pré-definidas:</p>
+<ul>
+  <li><code class="highlighter-rouge">$?</code> - Armazena o status de saída do último programa executado;</li>
+  <li><code class="highlighter-rouge">$#</code> - Armazena a quantidade de parâmetros de linha de comandos;</li>
+  <li><code class="highlighter-rouge">$$</code> - Armazena o valor PID (Process Identifier) do script em shell que estiver em execução;</li>
+  <li><code class="highlighter-rouge">$@</code> - Armazena o valor de todos os parâmetros passados, similar a variável argv presente nas
+linguagens de programação C e C++;</li>
+  <li><code class="highlighter-rouge">$!</code> - Armazena o PID do último processo em segundo plano. Isso é útil para acompanhar o processo à medida que o trabalho é realizado;</li>
+  <li><code class="highlighter-rouge">$0, ..., $9</code> - Armazena os valores de todos os parâmetros de linha de comando separadamente.</li>
+</ul>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Variáveis Pré-definidas]]></summary></entry><entry><title type="html">07 - Variáveis Globais</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/07-variaveis-globais.html" rel="alternate" type="text/html" title="07 - Variáveis Globais" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/07-variaveis-globais</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/07-variaveis-globais.html"><![CDATA[<h1 id="variáveis-globais">Variáveis Globais</h1>
+
+<p>Variáveis globais ou variáveis de ambiente globais, são variáveis criadas/definidas com o comando export e
+podem ser utilizadas por multiplos scripts em Shell. Um exemplo é a variável de ambiente <code class="highlighter-rouge">LANG</code> (Pré-
+definida em diversas distribuições Linux), Podendo ser acessada por diversos arquivos de script em Shell.
+Outras variáveis pré definidas são:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">PATH</code>: define diretórios de procura por programas executados no shell;</li>
+  <li><code class="highlighter-rouge">USER</code>: informa o nome do usuário do shell;</li>
+  <li><code class="highlighter-rouge">HOME</code>: informa o caminho do diretório home do usuário;</li>
+  <li><code class="highlighter-rouge">LANG</code>: Idioma/Linguagem, especificada como locale;</li>
+  <li><code class="highlighter-rouge">PWD</code>: diretório atual;</li>
+  <li><code class="highlighter-rouge">TERM</code>: Tipo de terminal atual em uso.</li>
+  <li><code class="highlighter-rouge">UID</code>: UID do usuário atual.</li>
+  <li><code class="highlighter-rouge">RANDOM</code>: Gera um número aleatório</li>
+</ul>
+
+<p>Experimente os seguintes comandos para ver as variáveis de ambiente (<em>Environment</em>, em inglês):</p>
+<ul>
+  <li><code class="highlighter-rouge">env</code></li>
+  <li><code class="highlighter-rouge">env | grep -v '[:;]' | sort</code></li>
+</ul>
+
+<p>Há duas formas de criar uma variável global, exportar uma variável pré definida ou definir quando for exportar:</p>
+
+<ol>
+  <li>Definir e depois exportar a variável:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">VARIAVEL1</span><span class="o">=</span>Teste
+<span class="nb">export </span>VARIAVEL1
+</code></pre></div>    </div>
+  </li>
+  <li>Definir e exportar em uma única linha:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">VARIAVEL2</span><span class="o">=</span>Teste
+</code></pre></div>    </div>
+  </li>
+</ol>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Variáveis Globais]]></summary></entry><entry><title type="html">08 - Array</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/08-array.html" rel="alternate" type="text/html" title="08 - Array" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/08-array</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/08-array.html"><![CDATA[<h1 id="array">Array</h1>
+
+<p>Bourne Shell (sh) não é compatível com variáveis tipo array, mas Bourne-Again Shell (Bash) sim. Exemplo simples de implementação:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nv">meu_array</span><span class="o">=(</span>1 2 3 4 5 6 7 8 9<span class="o">)</span>
+<span class="nv">meu_Array</span><span class="o">=(</span><span class="s2">"abc"</span> <span class="s2">"def"</span> <span class="s2">"ghi"</span><span class="o">)</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Array]]></summary></entry><entry><title type="html">09 - Chamar Variáveis</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/09-chamar-variaveis.html" rel="alternate" type="text/html" title="09 - Chamar Variáveis" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/09-chamar-variaveis</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/09-chamar-variaveis.html"><![CDATA[<h1 id="chamar-variáveis">Chamar variáveis</h1>
+
+<p>Para chamar variáveis utiliza-se o sinal de cifrão <code class="highlighter-rouge">$var</code>. O cifrão (<code class="highlighter-rouge">$</code>) também é bastante utilizado em script sh,
+para executar programas externos exemplo: <code class="highlighter-rouge">var=$(expr 2 + 2)</code> irá armazenar a saída do programa
+<code class="highlighter-rouge">expr</code>. E o cifrão mais chave <code class="highlighter-rouge">${var}</code> é comum ser utilizado das seguintes maneiras:</p>
+
+<p>Para acessar posições em um array <code class="highlighter-rouge">${var[1]}</code>. (Obs.: não funciona para sh, apenas para Bash)</p>
+
+<p>E também para substituir o valor de uma variável se a mesma não possuir um valor: <code class="highlighter-rouge">${var:-nome}</code> -
+<code class="highlighter-rouge">${var:=nome}</code> - <code class="highlighter-rouge">${var:-$(programa)}</code> dessas maneiras irão substituir pelo que for passado depois de <code class="highlighter-rouge">:-</code> ou <code class="highlighter-rouge">:=</code>,
+exemplo em código:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">read</span> <span class="nt">-p</span> <span class="s2">"Digite um nome: "</span>myname
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">myname</span>:<span class="p">=</span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="k">}</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>O código acima irá pedir para o usuário digitar um nome, caso digite irá utilizar <code class="highlighter-rouge">echo</code> para exibir o nome
+digitado na saída padrão, caso contrário irá substituir pela saída do comando <code class="highlighter-rouge">whoami</code>, ao invés de substituir
+pela saída de um comando, você pode substituir por outro valor exemplo: <code class="highlighter-rouge">${myname:=BourneShell}</code>.</p>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Chamar variáveis]]></summary></entry><entry><title type="html">10 - Remover variáveis</title><link href="http://localhost:4000/bash-as-fuck/2020/01/02/10-remover-variaveis.html" rel="alternate" type="text/html" title="10 - Remover variáveis" /><published>2020-01-02T07:20:23-03:00</published><updated>2020-01-02T07:20:23-03:00</updated><id>http://localhost:4000/bash-as-fuck/2020/01/02/10-remover-variaveis</id><content type="html" xml:base="http://localhost:4000/bash-as-fuck/2020/01/02/10-remover-variaveis.html"><![CDATA[<h1 id="remover-variáveis">Remover Variáveis</h1>
+
+<p>Para remover uma variável, utiliza-se o comando <code class="highlighter-rouge">unset</code> + <code class="highlighter-rouge">nome da variável</code>. Você pode também remover múltiplas variáveis. Basta separá-las por espaços.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">unset </span>VAR
+<span class="nb">unset </span>VAR1 VAR2 VAR3 VAR4
+</code></pre></div></div>]]></content><author><name></name></author><category term="bash-as-Fuck" /><summary type="html"><![CDATA[Remover Variáveis]]></summary></entry></feed>

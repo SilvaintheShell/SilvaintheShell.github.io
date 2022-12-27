@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Silva in the shell" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Silva in the shell</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">Silva in the shell</a>
+	</div>
+	<p class="lead">Shell, linux e DevOps</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#bash-as-Fuck">
+				<span class="name">bash-as-Fuck</span>
+				<span class="badge">31</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			19 - Operadores para Teste de Arquivos
+		</div>
+		<time class="post-date dt-published" datetime="2020-01-02T07:20:23-03:00" itemprop="datePublished">2020/01/02
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h1 id="operadores-para-teste-de-arquivos">Operadores para Teste de Arquivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operadores</th>
+      <th>Descrição</th>
+      <th>Exemplos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">-b</code></td>
+      <td>Verifica se o arquivo é um arquivo especial de bloco; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -b /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-c</code></td>
+      <td>Verifica se o arquivo é um arquivo especial de caracteres; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -c /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-d</code></td>
+      <td>Verifica se o arquivo é um diretório; se sim, então a condição se torna verdadeira</td>
+      <td><code class="highlighter-rouge">[ -d /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-f</code></td>
+      <td>Verifica se arquivo é um arquivo comum em oposição a um diretório ou arquivo especial; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -f /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-g</code></td>
+      <td>Verifica se o arquivo possui o seu conjunto de bits de identificação de grupo (SGID); se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -g /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-k</code></td>
+      <td>Verifica se o arquivo tem seu bit fixo definido; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -k /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-p</code></td>
+      <td>Verifica se o arquivo é um pipe nomeado; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -p /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-t</code></td>
+      <td>Verifica se o descritor de arquivo está aberto e associado a um terminal; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -t /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-u</code></td>
+      <td>Verifica se o arquivo tem seu bit Set ID do usuário (SUID) definido; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -u /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-r</code></td>
+      <td>Verifica se o arquivo está legível; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -r /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-w</code></td>
+      <td>Verifica se o arquivo é gravável; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -w /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-x</code></td>
+      <td>Verifica se o arquivo é executável; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -x /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-s</code></td>
+      <td>Verifica se o arquivo tem tamanho maior que 0; se sim, então a condição se torna verdadeira.</td>
+      <td><code class="highlighter-rouge">[ -s /etc/resolv.conf ]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-e</code></td>
+      <td>Verifica se o arquivo existe; é verdadeiro mesmo se o arquivo for um diretório, mas existe.</td>
+      <td><code class="highlighter-rouge">[ -e /etc/resolv.conf ]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>
